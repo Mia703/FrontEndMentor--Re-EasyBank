@@ -5,8 +5,9 @@
 	--primary-font-colour: #2D2E4A;
 	--bright-green: #33D35E;
 	--bright-blue: #2AB6D9;
-	--gray-white: #F4F5F7;
-	--off-white: #FAFAFA;
+	--gray-white: #F4F5F7; /* background */
+	--off-white: #FAFAFA; /* background */
+	--card-blurb-colour: #A2A2A4 ;
 	--footer-colour: #2D314E;
 }
 
@@ -27,7 +28,7 @@ body {
 	color: var(--primary-font-colour);
 	
 	/* global padding */
-	padding: 0 15px;
+	/* padding: 0 15px; */
 }
 
 .grid {
@@ -72,7 +73,7 @@ button {
 
 	border-radius: 1.2rem; 
 
-	background-color: grey;
+	background-image: linear-gradient(to right, var(--bright-green), var(--bright-blue));
 
 	border: none;
 }
@@ -166,28 +167,90 @@ button {
 	margin-bottom: 2.25rem;
 }
 
+.articles-cards.grid {
+	gap: 25px;
+}
+
 .acard {
-	background-color: green;
 	grid-column: span 4;
+	
+	margin: 0 auto;
+
+	background-color: white;
 
 	/* size of the card */
 	width: 291px;
-	height: 366px;
+
+	box-shadow: 5px 5px 9px var(--card-blurb-colour);
+
+	/* rounded edges */
+	border-radius: 8px 8px 8px 8px;
 }
 
 .acard img {
 	width: 100%;
 	height: 185px;
+
+	border-radius: 8px 8px 0 0;
 }
+
+.acard-text {
+	text-align: left;
+	padding: 28px;
+}
+
+.acard-text-person {
+	font-size: 9px;
+	color: var(--card-blurb-colour);
+	margin-bottom: 12px;
+}
+
+.acard-text-header {
+	font-size: 14px;
+	letter-spacing: .5%;
+	line-height: 118%;
+	margin-bottom: 12px;
+}
+
+.acard-text-blurb {
+	font-size: 11px;
+	color: var(--card-blurb-colour);
+}
+
 /* ---------- footer ---------- */
 footer {
 	background-color: var(--footer-colour);
 	text-align: center;
 	padding: 2rem 4rem;
+	color: white;
 }
 
 footer * {
 	margin: 0.5rem;
 }
+
+#footer-logo {
+	display: none;
+}
+
+#footer-citation {
+	color: var(--card-blurb-colour);
+}
 /* =================== media queries =================== */
-@media screen and (max-width: px) {}
+/* ---------- tablets ---------- */
+@media only screen and (min-width: 40.063em) and (max-width: 64em) { 
+	.header-section.grid {
+		background-color: green;
+	}
+
+	/* ---------- services section ---------- */
+	/* each card spans the 2 cols */
+	.services-cards .card {
+		grid-column: span 2;
+	}
+	
+	/* ---------- latest articles section ---------- */
+	.acard {
+		grid-column: span 2;
+	}
+}
