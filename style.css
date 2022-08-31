@@ -1,0 +1,193 @@
+/* =================== imported fonts =================== */
+
+/* =================== global variables =================== */
+:root {
+	--primary-font-colour: #2D2E4A;
+	--bright-green: #33D35E;
+	--bright-blue: #2AB6D9;
+	--gray-white: #F4F5F7;
+	--off-white: #FAFAFA;
+	--footer-colour: #2D314E;
+}
+
+/* =================== reset default styles =================== */
+* {
+	margin: 0;
+	padding: 0;
+	text-decoration: none;
+}
+
+li {
+	list-style-type: none;
+}
+
+/* =================== base page styles =================== */
+body {
+	font-family: 'Public Sans', sans-serif;
+	color: var(--primary-font-colour);
+	
+	/* global padding */
+	padding: 0 15px;
+}
+
+.grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+
+/* =================== font styles =================== */
+h1 {
+	font-size: 36px;
+	font-weight: 200;
+}
+
+h2 {
+	font-size: 28px;
+	font-weight: 200;
+
+}
+
+h3 {
+	font-size: 18px;
+	font-weight: 200;
+
+}
+
+p {
+	font-size: 13px;
+	line-height: 1.3rem;
+}
+
+button {
+	font-size: 13px;
+	color: white;
+
+	/* bold */
+	font-weight: 700;
+
+	/* button size */
+	width: 9.4375rem;
+	height: 2.5625rem;
+
+	border-radius: 1.2rem; 
+
+	background-color: grey;
+
+	border: none;
+}
+
+/* =================== primary media query =================== */
+
+/* ---------- header section ---------- */
+.header-section.grid {
+	background-color: white;
+	padding: 1.2rem 1.3rem;
+}
+
+#logo {
+	grid-column: span 3;
+}
+
+/* ---------- image section ---------- */
+.image-section {
+	background-color: var(--off-white);
+
+	background-image: url('./assets/bg-intro-mobile.svg');
+	background-repeat: no-repeat;
+	background-size: cover;
+
+	/* hide content that goes out of bounds */
+	overflow: hidden;
+}
+
+#mobile-phone-img {
+	width: 100%;
+	position: relative;
+	bottom: 8rem;
+}
+
+/* ---------- hero section ---------- */
+.hero-section {
+	background-color: var(--off-white);
+	padding: 1rem 1rem 5rem;
+	text-align: center;
+}
+
+.hero-section h1 {
+	margin-bottom: 1.4rem;
+}
+
+.hero-section p {
+	margin-bottom: 2rem;
+}
+
+/* ---------- services section ---------- */
+.services-section {
+	background-color: var(--gray-white);
+	padding: 3.8rem 1.5rem;
+	text-align: center;
+}
+
+.services-section h2 {
+	margin-bottom: 1.25rem;
+}
+
+#services-bio {
+	margin-bottom: 3.5rem;
+}
+
+/* each card spans the whole width */
+.services-cards .card {
+	grid-column: span 4;
+}
+
+.card img, .card h3 {
+	margin-bottom: 1.4rem;
+}
+
+.card img {
+	width: 67px;
+}
+
+.card p {
+	margin-bottom: 2.1rem;
+}
+
+
+/* ---------- latest articles section ---------- */
+.articles-section {
+	background-color: var(--off-white);
+	padding: 5.5rem 1.4rem;
+	text-align: center;
+}
+
+#articles-header {
+	margin-bottom: 2.25rem;
+}
+
+.acard {
+	background-color: green;
+	grid-column: span 4;
+
+	/* size of the card */
+	width: 291px;
+	height: 366px;
+}
+
+.acard img {
+	width: 100%;
+	height: 185px;
+}
+/* ---------- footer ---------- */
+footer {
+	background-color: var(--footer-colour);
+	text-align: center;
+	padding: 2rem 4rem;
+}
+
+footer * {
+	margin: 0.5rem;
+}
+/* =================== media queries =================== */
+@media screen and (max-width: px) {}
