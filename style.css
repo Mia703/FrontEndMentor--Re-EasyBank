@@ -90,6 +90,8 @@ button {
 	grid-column: span 3;
 }
 
+/* TODO: get hamburger icon to move right */
+
 /* ---------- image section ---------- */
 .image-section {
 	background-color: var(--off-white);
@@ -182,9 +184,17 @@ button {
 	width: 291px;
 
 	box-shadow: 5px 5px 9px var(--card-blurb-colour);
+	transition: 0.3s;
 
 	/* rounded edges */
 	border-radius: 8px 8px 8px 8px;
+
+	cursor: pointer;
+}
+
+.acard:hover {
+	box-shadow: 8px 8px 9px var(--footer-colour);
+	transition: 0.3s;
 }
 
 .acard img {
@@ -226,11 +236,31 @@ footer {
 }
 
 footer * {
-	margin: 0.5rem;
+	margin: 0.4rem;
 }
 
 #footer-logo {
 	display: none;
+}
+
+.social-icons img {
+	cursor: pointer;
+}
+
+.footer-menu.grid p {
+	grid-column: span 4;
+
+	cursor: pointer;
+	transition: 0.3s;
+}
+
+.footer-menu.grid p:hover {
+	color: var(--card-blurb-colour);
+	transition: 0.3s;
+}
+
+footer button {
+	margin: 2rem 0;
 }
 
 #footer-citation {
@@ -239,18 +269,44 @@ footer * {
 /* =================== media queries =================== */
 /* ---------- tablets ---------- */
 @media only screen and (min-width: 40.063em) and (max-width: 64em) { 
-	.header-section.grid {
-		background-color: green;
-	}
 
-	/* ---------- services section ---------- */
+	/* ---------- grids ---------- */
 	/* each card spans the 2 cols */
 	.services-cards .card {
 		grid-column: span 2;
 	}
-	
-	/* ---------- latest articles section ---------- */
+
 	.acard {
 		grid-column: span 2;
+	}
+
+	.footer-menu.grid p {
+		grid-column: span 2;
+	}
+
+	/* ---------- everything else ---------- */
+	
+	/* ---------- hero section ---------- */
+	.hero-section p {
+		padding: 0 6rem;
+	}
+
+	/* ---------- image section ---------- */
+	#mobile-phone-img {
+		bottom: 15rem;
+	}
+
+	/* ---------- services section ---------- */
+	#services-bio {
+		padding: 0 6rem;
+	}
+
+	.card p {
+		padding: 0 2rem;
+	}
+
+	/* ---------- footer ---------- */
+	.footer-menu.grid{
+		padding: 0 5.75rem;
 	}
 }
