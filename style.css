@@ -88,29 +88,46 @@ button {
 
 #logo {
 	grid-column: span 3;
+	margin: auto 0;
 }
 
-/* TODO: get hamburger icon to move right */
+#hamburger-icon {
+	grid-column: span 1;
+	margin: auto 0 auto auto;
+}
 
 /* ---------- image section ---------- */
-.image-section {
+.image-section.grid {
 	background-color: var(--off-white);
+}
 
-	/* hide content that goes out of bounds */
+.image-collection {
+	grid-row: 1;
+	grid-column: span 4;
+
+	background-image: url(./assets/bg-intro-mobile.svg);
+	background-repeat: no-repeat;
+	background-size: contain;
+
 	overflow: hidden;
 }
 
 #mobile-phone-img {
 	width: 100%;
+	margin: 0 auto;
+
 	position: relative;
 	bottom: 8rem;
 }
 
 /* ---------- hero section ---------- */
 .hero-section {
-	background-color: var(--off-white);
-	padding: 1rem 1rem 5rem;
+	grid-row: 2;
+	grid-column: span 4;
+
 	text-align: center;
+
+	padding: 0rem 2rem 5rem;
 }
 
 .hero-section h1 {
@@ -239,8 +256,20 @@ footer * {
 	display: none;
 }
 
+.social-icons {
+	grid-row: 1;
+	grid-column: span 4;
+	text-align: center;
+}
+
 .social-icons img {
 	cursor: pointer;
+}
+
+.footer-menu.grid {
+	grid-row: 2;
+	grid-column: span 4;
+	text-align: center;
 }
 
 .footer-menu.grid p {
@@ -256,12 +285,20 @@ footer * {
 }
 
 footer button {
-	margin: 2rem 0;
+	grid-row: 3;
+	grid-column: span 4;
+	margin: 2rem auto;
 }
 
 #footer-citation {
+	grid-row: 4;
+	grid-column: span 4;
+
 	color: var(--card-blurb-colour);
+
+	text-align: center;
 }
+
 /* =================== media queries =================== */
 /* ---------- tablets ---------- */
 @media only screen and (min-width: 40.063em) and (max-width: 64em) { 
@@ -277,10 +314,14 @@ footer button {
 	}
 
 	/* ---------- everything else ---------- */
+	/* ---------- header section ---------- */
+	.header-section.grid {
+		padding: 1.2rem 2rem;
+	}
 	
 	/* ---------- hero section ---------- */
 	.hero-section p {
-		padding: 0 9rem;
+		padding: 0 8rem;
 	}
 
 	/* ---------- image section ---------- */
@@ -305,11 +346,18 @@ footer button {
 
 /* ---------- desktop ---------- */
 @media only screen and (min-width: 64.063em) and (max-width: 90em) { 
-	.header-section.grid {
-		background-color: green;
-	}
 
 	/* ---------- grids ---------- */
+	.hero-section {
+		grid-row: 1;
+		grid-column: span 2;
+	}
+
+	.image-collection {
+		grid-row: 1;
+		grid-column: span 2;
+	}
+
 	.services-cards .card {
 		grid-column: span 1;
 	}
@@ -319,4 +367,85 @@ footer button {
 	}
 
 	/* ---------- everything else ---------- */
+
+	/* ---------- hero section ---------- */
+	.hero-section {
+		text-align: left;
+		padding: 11rem 10rem;
+	}
+
+	.hero-section h1 {
+		padding-right: 2rem;
+	}
+
+	.hero-section p {
+		padding-right: 2rem;
+	}
+
+	/* ---------- image section ---------- */
+
+	/* ---------- services section ---------- */
+	.services-section {
+		text-align: left;
+		padding: 6rem 10rem;
+	}
+
+	#services-bio {
+		padding-right: 40rem;
+	}
+
+	.card p {
+		padding-right: 4rem;
+	}
+
+	/* ---------- article section ---------- */
+	.articles-section {
+		text-align: left;
+		padding: 6rem 10rem;
+	}
+
+	.acard {
+		width: 260px;
+	}
+
+	/* ---------- footer section ---------- */
+	footer {
+		padding: 3rem 10rem;
+	}
+
+	footer * {
+		margin: 0rem;
+	}
+
+	.social-icons {
+		grid-row: 1;
+		grid-column: span 1;
+	}
+
+	.social-icons img {
+		margin: 0 0.5rem;
+	}
+
+	.footer-menu.grid {
+		grid-row: 1;
+		grid-column: span 2;
+
+	}
+
+	.footer-menu.grid p {
+		grid-column: span 2;
+		text-align: left;
+
+	}
+
+	footer button {
+		grid-row: 1;
+		grid-column: span 1;
+	}
+
+	#footer-citation {
+		grid-row: 2;
+		grid-column: 4/5;
+
+	}
 }
