@@ -96,10 +96,6 @@ button {
 .image-section {
 	background-color: var(--off-white);
 
-	background-image: url('./assets/bg-intro-mobile.svg');
-	background-repeat: no-repeat;
-	background-size: cover;
-
 	/* hide content that goes out of bounds */
 	overflow: hidden;
 }
@@ -280,15 +276,11 @@ footer button {
 		grid-column: span 2;
 	}
 
-	.footer-menu.grid p {
-		grid-column: span 2;
-	}
-
 	/* ---------- everything else ---------- */
 	
 	/* ---------- hero section ---------- */
 	.hero-section p {
-		padding: 0 6rem;
+		padding: 0 9rem;
 	}
 
 	/* ---------- image section ---------- */
@@ -298,15 +290,33 @@ footer button {
 
 	/* ---------- services section ---------- */
 	#services-bio {
-		padding: 0 6rem;
+		padding: 0 9rem;
 	}
 
 	.card p {
-		padding: 0 2rem;
+		padding: 0 2.5rem;
 	}
 
 	/* ---------- footer ---------- */
 	.footer-menu.grid{
 		padding: 0 5.75rem;
 	}
+}
+
+/* ---------- desktop ---------- */
+@media only screen and (min-width: 64.063em) and (max-width: 90em) { 
+	.header-section.grid {
+		background-color: green;
+	}
+
+	/* ---------- grids ---------- */
+	.services-cards .card {
+		grid-column: span 1;
+	}
+
+	.acard {
+		grid-column: span 1;
+	}
+
+	/* ---------- everything else ---------- */
 }
