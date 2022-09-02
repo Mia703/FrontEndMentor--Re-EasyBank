@@ -5,6 +5,8 @@
 	--primary-font-colour: #2D2E4A;
 	--bright-green: #33D35E;
 	--bright-blue: #2AB6D9;
+	--bright-green-hover: #84E1AA;
+	--bright-blue-hover: #81D5DF;
 	--gray-white: #F4F5F7; /* background */
 	--off-white: #FAFAFA; /* background */
 	--card-blurb-colour: #A2A2A4 ;
@@ -26,9 +28,6 @@ li {
 body {
 	font-family: 'Public Sans', sans-serif;
 	color: var(--primary-font-colour);
-	
-	/* global padding */
-	/* padding: 0 15px; */
 }
 
 .grid {
@@ -76,6 +75,15 @@ button {
 	background-image: linear-gradient(to right, var(--bright-green), var(--bright-blue));
 
 	border: none;
+	
+	cursor: pointer;
+
+	transition: 3s;
+}
+
+button:hover {
+	background-image: linear-gradient(to right, var(--bright-green-hover), var(--bright-blue-hover));
+	transition: 3s;
 }
 
 /* =================== primary media query =================== */
@@ -89,6 +97,14 @@ button {
 #logo {
 	grid-column: span 3;
 	margin: auto 0;
+}
+
+nav {
+	display: none;
+}
+
+.header-section.grid button {
+	display: none;
 }
 
 #hamburger-icon {
@@ -107,7 +123,7 @@ button {
 
 	background-image: url(./assets/bg-intro-mobile.svg);
 	background-repeat: no-repeat;
-	background-size: contain;
+	background-size: 100%;
 
 	overflow: hidden;
 }
@@ -131,11 +147,13 @@ button {
 }
 
 .hero-section h1 {
-	margin-bottom: 1.4rem;
+	max-width: 15ch;
+	margin: 0 auto 1.4rem;
 }
 
 .hero-section p {
-	margin-bottom: 2rem;
+	max-width: 40ch;
+	margin: 0 auto 2rem;
 }
 
 /* ---------- services section ---------- */
@@ -146,11 +164,13 @@ button {
 }
 
 .services-section h2 {
-	margin-bottom: 1.25rem;
+	max-width: 15ch;
+	margin: 0 auto 1.25rem;
 }
 
 #services-bio {
-	margin-bottom: 3.5rem;
+	max-width: 40ch;
+	margin: 0 auto 3.5rem;
 }
 
 /* each card spans the whole width */
@@ -167,7 +187,8 @@ button {
 }
 
 .card p {
-	margin-bottom: 2.1rem;
+	max-width: 35ch;
+	margin: 0 auto 2.1rem;
 }
 
 
@@ -182,10 +203,6 @@ button {
 	margin-bottom: 2.25rem;
 }
 
-.articles-cards.grid {
-	gap: 25px;
-}
-
 .acard {
 	grid-column: span 4;
 	
@@ -194,7 +211,7 @@ button {
 	background-color: white;
 
 	/* size of the card */
-	width: 291px;
+	max-width: 291px;
 
 	box-shadow: 5px 5px 9px var(--card-blurb-colour);
 	transition: 0.3s;
@@ -314,28 +331,33 @@ footer button {
 	}
 
 	/* ---------- everything else ---------- */
+
 	/* ---------- header section ---------- */
 	.header-section.grid {
 		padding: 1.2rem 2rem;
 	}
 	
-	/* ---------- hero section ---------- */
-	.hero-section p {
-		padding: 0 8rem;
-	}
-
 	/* ---------- image section ---------- */
 	#mobile-phone-img {
 		bottom: 15rem;
 	}
 
-	/* ---------- services section ---------- */
-	#services-bio {
-		padding: 0 9rem;
+	/* ---------- hero section ---------- */
+	.hero-section h1 {
+		max-width: 30ch;
 	}
 
-	.card p {
-		padding: 0 2.5rem;
+	.hero-section p {
+		max-width: 55ch;
+	}
+
+	/* ---------- services section ---------- */
+	.services-section h2 {
+		max-width: 30ch;
+	}
+
+	#services-bio {
+		max-width: 50ch;
 	}
 
 	/* ---------- footer ---------- */
@@ -345,7 +367,7 @@ footer button {
 }
 
 /* ---------- desktop ---------- */
-@media only screen and (min-width: 64.063em) and (max-width: 90em) { 
+@media only screen and (min-width: 64.063em) { 
 
 	/* ---------- grids ---------- */
 	.hero-section {
@@ -356,6 +378,10 @@ footer button {
 	.image-collection {
 		grid-row: 1;
 		grid-column: span 2;
+
+		background-image: url(./assets/bg-intro-desktop.svg);
+		background-repeat: no-repeat;
+		background-size: 100%;
 	}
 
 	.services-cards .card {
@@ -368,21 +394,63 @@ footer button {
 
 	/* ---------- everything else ---------- */
 
+	/* ---------- header section ---------- */
+	#logo {
+		grid-column: span 1;
+	}
+
+	nav {
+		display: block;
+		grid-column: span 2;
+		margin: auto auto;
+	}
+
+	nav li {
+		display: inline-block;
+		font-size: 14px;
+		color: #919095;
+		
+		margin: 0rem 1.5rem;
+		cursor: pointer;
+	}
+
+	nav li:hover {
+		border-bottom: 2px solid;
+		border-image: linear-gradient(to right, var(--bright-green), var(--bright-blue)) 1;
+	}
+	
+	.header-section.grid button {
+		display: block;
+		grid-column: span 1;
+		margin: auto 0 auto auto;
+	}
+
+	#hamburger-icon {
+		display: none;
+	}
+	
+	/* ---------- image section ---------- */
+	#mobile-phone-img {
+		max-width: 90%;
+		left: 8rem;
+	}
+
 	/* ---------- hero section ---------- */
 	.hero-section {
 		text-align: left;
-		padding: 11rem 10rem;
+		padding-top: 11rem;
+		padding-left: 10rem;
 	}
 
 	.hero-section h1 {
-		padding-right: 2rem;
+		max-width: 15ch;
+		margin: 0 0 1.4rem;
 	}
 
 	.hero-section p {
-		padding-right: 2rem;
+		max-width: 45ch;
+		margin: 0 0 2rem;
 	}
-
-	/* ---------- image section ---------- */
 
 	/* ---------- services section ---------- */
 	.services-section {
@@ -390,22 +458,24 @@ footer button {
 		padding: 6rem 10rem;
 	}
 
+	.services-section h2 {
+		max-width: 20ch;
+		margin: 0 0 1.25rem;
+	}
+
 	#services-bio {
-		padding-right: 40rem;
+		max-width: 60ch;
+		margin: 0 0 3.5rem;
 	}
 
 	.card p {
-		padding-right: 4rem;
+		margin: 0;
 	}
 
 	/* ---------- article section ---------- */
 	.articles-section {
 		text-align: left;
 		padding: 6rem 10rem;
-	}
-
-	.acard {
-		width: 260px;
 	}
 
 	/* ---------- footer section ---------- */
@@ -446,6 +516,8 @@ footer button {
 	#footer-citation {
 		grid-row: 2;
 		grid-column: 4/5;
+
+		font-size: 9px;
 
 	}
 }
