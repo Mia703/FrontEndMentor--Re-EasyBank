@@ -274,7 +274,6 @@ footer * {
 }
 
 .social-icons {
-	grid-row: 1;
 	grid-column: span 4;
 	text-align: center;
 }
@@ -284,7 +283,6 @@ footer * {
 }
 
 .footer-menu.grid {
-	grid-row: 2;
 	grid-column: span 4;
 	text-align: center;
 }
@@ -301,18 +299,16 @@ footer * {
 	transition: 0.3s;
 }
 
-footer button {
-	grid-row: 3;
+.footer-button-group {
 	grid-column: span 4;
+}
+
+footer button {
 	margin: 2rem auto;
 }
 
 #footer-citation {
-	grid-row: 4;
-	grid-column: span 4;
-
 	color: var(--card-blurb-colour);
-
 	text-align: center;
 }
 
@@ -488,7 +484,6 @@ footer button {
 	}
 
 	.social-icons {
-		grid-row: 1;
 		grid-column: span 1;
 	}
 
@@ -497,7 +492,6 @@ footer button {
 	}
 
 	.footer-menu.grid {
-		grid-row: 1;
 		grid-column: span 2;
 
 	}
@@ -508,16 +502,11 @@ footer button {
 
 	}
 
-	footer button {
-		grid-row: 1;
+	.footer-button-group {
 		grid-column: span 1;
 	}
 
-	#footer-citation {
-		grid-row: 2;
-		grid-column: 4/5;
-
-		font-size: 9px;
-
+	footer button {
+		margin: 1rem auto ;
 	}
 }

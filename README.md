@@ -54,3 +54,8 @@ Commonalitieis:
 ~~	- 13px~~
 - button:
 ~~	- 13px bold~~
+
+# Glaring Issues
+- How do I fix the desktop menu so that the underline doesn't shift the whole menu up?
+- If I make the mobile image mockup absolute how do I keep it contained inside the grid column?
+- How do I move the footer menu closer together?
